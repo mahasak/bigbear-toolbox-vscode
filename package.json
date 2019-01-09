@@ -1,0 +1,53 @@
+{
+	"name": "bigbears-toolbox",
+	"displayName": "BigBears Toolbox",
+	"description": "BigBears Toolbox",
+	"version": "0.0.1",
+	"publisher": "mahasak-pijittum",
+	"author": {
+		"name": "Mahasak Pijittum"
+	},
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.bigbearsCreateSnippet"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.bigbearsCreateSnippet",
+				"title": "BIGBEARS : Create from Selected"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.bigbearsCreateSnippet",
+					"group": "bigbears"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"tslint": "^5.8.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"await-fs": "^1.0.0"
+	}
+}
